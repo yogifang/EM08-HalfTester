@@ -1,0 +1,66 @@
+SW
+FW
+CAR_Type
+	1 = AS
+	2 = RE
+	3 = NS
+	4 = SR
+	5 = DE
+	6 = JD
+	7 = NPZ
+GPS_Status
+	-1 = 尚未抓取到NEMA資料
+	0 = 已正確抓取到NEMA資料
+	1 = 時間校正完成
+	2 = 定位完成
+speed
+G Sensor Status
+	0 = 未偵測到裝置
+	1 = 有偵測到裝置
+R_STD
+ACC_STD
+SDCARD_Status
+		Case 0
+                    Return "未插卡"
+                Case 1
+                    Return "插入偵測"
+                Case 2
+                    Return "卡片異常"
+                Case 3
+                    Return "檔案系統確認中"
+                Case 4
+                    Return "檔案系統確認失敗"
+                Case 5
+                    Return "檔案系統出現例外"
+                Case 6
+                    Return "SD卡掛載完成"
+                Case 7
+                    Return "SD卡掛載失敗"
+                Case 8
+                    Return "SD卡閒置"
+camera_F_status
+		Case 0
+                    Return "1080P25"
+                Case 1
+                    Return "1080P30"
+                Case 2
+                    Return "720P25"
+                Case 3
+                    Return "720P30"
+                Case 4
+                    Return "720P60"
+                Case 5
+                    Return "無連接"
+camera_R_status
+		Case 0
+                    Return "1080P25"
+                Case 1
+                    Return "1080P30"
+                Case 2
+                    Return "720P25"
+                Case 3
+                    Return "720P30"
+                Case 4
+                    Return "720P60"
+                Case 5
+                    Return "無連接"

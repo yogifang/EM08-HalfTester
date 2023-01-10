@@ -1,0 +1,595 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="_1o" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\led_orange\1o.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_2rd" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\led_red\2rd.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_4b" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\led_blue\4b.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="fail" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\fail.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Ch32" xml:space="preserve">
+    <value>G_SENSOR_POWER</value>
+    <comment>32</comment>
+  </data>
+  <data name="_3rd" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\led_red\3rd.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Ch28" xml:space="preserve">
+    <value>GPS_VBACK</value>
+    <comment>28</comment>
+  </data>
+  <data name="_8" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\led_white\8.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_4y" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\led_yellow\4y.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Ch4" xml:space="preserve">
+    <value>Standby power 3.3V</value>
+    <comment>4</comment>
+  </data>
+  <data name="_2o" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\led_orange\2o.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_8y" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\led_yellow\8y.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_6r" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\led_red\6r.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_8yd" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\led_yellow\8yd.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_0r" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\led_red\0r.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Ch15" xml:space="preserve">
+    <value>SD card power</value>
+    <comment>15</comment>
+  </data>
+  <data name="Ch6" xml:space="preserve">
+    <value>Main Power</value>
+    <comment>6</comment>
+  </data>
+  <data name="_3yd" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\led_yellow\3yd.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_0o" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\led_orange\0o.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_1yd" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\led_yellow\1yd.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_1r" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\led_red\1r.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_0od" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\led_orange\0od.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_2y" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\led_yellow\2y.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_6od" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\led_orange\6od.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_5r" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\led_red\5r.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="led-a" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\led-a.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Ch8" xml:space="preserve">
+    <value>Golden Cap. Voltage</value>
+    <comment>8</comment>
+  </data>
+  <data name="_0yd" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\led_yellow\0yd.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_8d" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\led_white\8d.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_1g" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\led_green\1g.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_5od" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\led_orange\5od.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_1d" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\led_white\1d.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Ch27" xml:space="preserve">
+    <value>CAN_STBY</value>
+    <comment>27</comment>
+  </data>
+  <data name="_7g" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\led_green\7g.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Ch14" xml:space="preserve">
+    <value>LCD_RST</value>
+    <comment>14</comment>
+  </data>
+  <data name="Ch23" xml:space="preserve">
+    <value>+12V</value>
+    <comment>23</comment>
+  </data>
+  <data name="_3o" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\led_orange\3o.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_7yd" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\led_yellow\7yd.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Ch31" xml:space="preserve">
+    <value>G_SENSOR_INT</value>
+    <comment>31</comment>
+  </data>
+  <data name="_9od" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\led_orange\9od.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_2r" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\led_red\2r.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_1gd" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\led_green\1gd.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="led-b" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\led-b.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Ch16" xml:space="preserve">
+    <value>LCD back light</value>
+    <comment>16</comment>
+  </data>
+  <data name="Ch9" xml:space="preserve">
+    <value>PMU_1V0</value>
+    <comment>9</comment>
+  </data>
+  <data name="_9d" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\led_white\9d.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\led_white\1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_9rd" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\led_red\9rd.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_9bd" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\led_blue\9bd.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_4r" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\led_red\4r.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_0d" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\led_white\0d.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_2yd" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\led_yellow\2yd.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="none" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\led_white\none.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_0gd" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\led_green\0gd.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\led_white\3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Ch1" xml:space="preserve">
+    <value>Rear Camera Power</value>
+    <comment>1</comment>
+  </data>
+  <data name="_9b" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\led_blue\9b.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_9g" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\led_green\9g.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_3bd" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\led_blue\3bd.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\led_white\4.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_0bd" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\led_blue\0bd.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_0b" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\led_blue\0b.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_5y" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\led_yellow\5y.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\led_white\0.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_3g" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\led_green\3g.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Ch24" xml:space="preserve">
+    <value>GND</value>
+    <comment>24</comment>
+  </data>
+  <data name="_4o" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\led_orange\4o.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_5o" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\led_orange\5o.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_6gd" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\led_green\6gd.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_3d" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\led_white\3d.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_9yd" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\led_yellow\9yd.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\led_white\2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_2bd" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\led_blue\2bd.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_9gd" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\led_green\9gd.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_8b" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\led_blue\8b.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_2b" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\led_blue\2b.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_0g" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\led_green\0g.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_9" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\led_white\9.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Ch11" xml:space="preserve">
+    <value>PMU_1V8</value>
+    <comment>11</comment>
+  </data>
+  <data name="_6o" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\led_orange\6o.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_3b" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\led_blue\3b.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_5rd" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\led_red\5rd.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_2gd" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\led_green\2gd.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_4gd" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\led_green\4gd.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_1rd" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\led_red\1rd.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_4d" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\led_white\4d.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_2g" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\led_green\2g.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_1od" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\led_orange\1od.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Ch13" xml:space="preserve">
+    <value>SD card inserted</value>
+    <comment>13</comment>
+  </data>
+  <data name="_6d" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\led_white\6d.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_6" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\led_white\6.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_4od" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\led_orange\4od.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Ch2" xml:space="preserve">
+    <value>Camera 2 Power</value>
+    <comment>2</comment>
+  </data>
+  <data name="_4bd" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\led_blue\4bd.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_6bd" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\led_blue\6bd.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_1y" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\led_yellow\1y.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_6yd" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\led_yellow\6yd.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_4yd" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\led_yellow\4yd.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_9r" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\led_red\9r.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_0y" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\led_yellow\0y.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_7y" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\led_yellow\7y.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_8gd" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\led_green\8gd.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_6g" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\led_green\6g.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_8od" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\led_orange\8od.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_4g" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\led_green\4g.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Ch17" xml:space="preserve">
+    <value>LCD power</value>
+    <comment>17</comment>
+  </data>
+  <data name="_4rd" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\led_red\4rd.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_6b" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\led_blue\6b.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_7rd" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\led_red\7rd.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_7o" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\led_orange\7o.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_6y" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\led_yellow\6y.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Ch12" xml:space="preserve">
+    <value>PMU_3V3</value>
+    <comment>12</comment>
+  </data>
+  <data name="_5" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\led_white\5.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_7gd" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\led_green\7gd.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_5yd" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\led_yellow\5yd.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Ch18" xml:space="preserve">
+    <value>TP2825 power</value>
+    <comment>18</comment>
+  </data>
+  <data name="Ch3" xml:space="preserve">
+    <value>Standby power 5V</value>
+    <comment>3</comment>
+  </data>
+  <data name="_7d" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\led_white\7d.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Ch10" xml:space="preserve">
+    <value>PMU_1V35</value>
+    <comment>10</comment>
+  </data>
+  <data name="_7od" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\led_orange\7od.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_1bd" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\led_blue\1bd.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_3od" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\led_orange\3od.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_2d" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\led_white\2d.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_6rd" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\led_red\6rd.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_2od" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\led_orange\2od.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_8o" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\led_orange\8o.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_7" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\led_white\7.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_3r" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\led_red\3r.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_7r" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\led_red\7r.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Ch5" xml:space="preserve">
+    <value>ACC input singal</value>
+    <comment>5</comment>
+  </data>
+  <data name="_1b" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\led_blue\1b.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_3gd" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\led_green\3gd.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_5gd" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\led_green\5gd.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_8r" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\led_red\8r.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_5b" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\led_blue\5b.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_9y" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\led_yellow\9y.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_5d" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\led_white\5d.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_8rd" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\led_red\8rd.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Ch7" xml:space="preserve">
+    <value>Power Buffer</value>
+    <comment>7</comment>
+  </data>
+  <data name="red_button_spam" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>Resources\red-button-spam.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_5bd" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\led_blue\5bd.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_8g" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\led_green\8g.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_9o" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\led_orange\9o.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_7bd" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\led_blue\7bd.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_0rd" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\led_red\0rd.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_3y" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\led_yellow\3y.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_8bd" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\led_blue\8bd.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_7b" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\led_blue\7b.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="_5g" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\led_green\5g.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="pass" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>images\pass.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+</root>
