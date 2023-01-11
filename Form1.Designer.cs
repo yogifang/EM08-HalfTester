@@ -34,11 +34,6 @@
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.pictureBox5 = new System.Windows.Forms.PictureBox();
-            this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.label3 = new System.Windows.Forms.Label();
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
@@ -140,25 +135,15 @@
             this.lblTime = new System.Windows.Forms.Label();
             this.panelDisplay = new System.Windows.Forms.Panel();
             this.panelEM02Messages = new System.Windows.Forms.Panel();
-            this.lblFirmware = new System.Windows.Forms.Label();
-            this.lblCarModel = new System.Windows.Forms.Label();
-            this.lblGPS = new System.Windows.Forms.Label();
-            this.lblSpeed = new System.Windows.Forms.Label();
-            this.lblGSensor = new System.Windows.Forms.Label();
             this.lblACC = new System.Windows.Forms.Label();
             this.lblSDCard = new System.Windows.Forms.Label();
             this.lblFrontCAM = new System.Windows.Forms.Label();
             this.lblRearCAM = new System.Windows.Forms.Label();
             this.lblSoftware = new System.Windows.Forms.Label();
-            this.label32 = new System.Windows.Forms.Label();
-            this.label31 = new System.Windows.Forms.Label();
-            this.label30 = new System.Windows.Forms.Label();
-            this.label27 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.lblEM02 = new System.Windows.Forms.Label();
             this.lblLength = new System.Windows.Forms.Label();
@@ -166,10 +151,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
@@ -304,71 +285,6 @@
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Tag = "5";
-            // 
-            // groupBox2
-            // 
-            this.groupBox2.BackColor = System.Drawing.SystemColors.ControlText;
-            this.groupBox2.Controls.Add(this.label2);
-            this.groupBox2.Controls.Add(this.pictureBox4);
-            this.groupBox2.Controls.Add(this.pictureBox5);
-            this.groupBox2.Controls.Add(this.pictureBox6);
-            this.groupBox2.Font = new System.Drawing.Font("Microsoft JhengHei UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.groupBox2.ForeColor = System.Drawing.SystemColors.Control;
-            this.groupBox2.Location = new System.Drawing.Point(747, 13);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(2);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(2);
-            this.groupBox2.Size = new System.Drawing.Size(170, 90);
-            this.groupBox2.TabIndex = 1;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Tag = "2";
-            this.groupBox2.Text = "CAM2_Power";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(150, 68);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(20, 20);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "V";
-            // 
-            // pictureBox4
-            // 
-            this.pictureBox4.Image = global::EM02_E_HalfTester.Resource1._0;
-            this.pictureBox4.Location = new System.Drawing.Point(96, 24);
-            this.pictureBox4.Margin = new System.Windows.Forms.Padding(2);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(42, 56);
-            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox4.TabIndex = 2;
-            this.pictureBox4.TabStop = false;
-            this.pictureBox4.Tag = "0";
-            // 
-            // pictureBox5
-            // 
-            this.pictureBox5.Image = global::EM02_E_HalfTester.Resource1.none;
-            this.pictureBox5.Location = new System.Drawing.Point(50, 24);
-            this.pictureBox5.Margin = new System.Windows.Forms.Padding(2);
-            this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(42, 56);
-            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox5.TabIndex = 1;
-            this.pictureBox5.TabStop = false;
-            this.pictureBox5.Tag = "0";
-            // 
-            // pictureBox6
-            // 
-            this.pictureBox6.Image = global::EM02_E_HalfTester.Resource1.none;
-            this.pictureBox6.Location = new System.Drawing.Point(4, 24);
-            this.pictureBox6.Margin = new System.Windows.Forms.Padding(2);
-            this.pictureBox6.Name = "pictureBox6";
-            this.pictureBox6.Size = new System.Drawing.Size(42, 56);
-            this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox6.TabIndex = 0;
-            this.pictureBox6.TabStop = false;
-            this.pictureBox6.Tag = "5";
             // 
             // groupBox3
             // 
@@ -1543,7 +1459,7 @@
             this.label29.Name = "label29";
             this.label29.Size = new System.Drawing.Size(48, 15);
             this.label29.TabIndex = 4;
-            this.label29.Text = "EM-02:";
+            this.label29.Text = "EM-08:";
             // 
             // cbUT5526
             // 
@@ -1615,7 +1531,6 @@
             // 
             this.panelDisplay.Controls.Add(this.groupBox5);
             this.panelDisplay.Controls.Add(this.groupBox1);
-            this.panelDisplay.Controls.Add(this.groupBox2);
             this.panelDisplay.Controls.Add(this.groupBox3);
             this.panelDisplay.Controls.Add(this.groupBox4);
             this.panelDisplay.Controls.Add(this.groupBox6);
@@ -1638,91 +1553,21 @@
             // 
             // panelEM02Messages
             // 
-            this.panelEM02Messages.Controls.Add(this.lblFirmware);
-            this.panelEM02Messages.Controls.Add(this.lblCarModel);
-            this.panelEM02Messages.Controls.Add(this.lblGPS);
-            this.panelEM02Messages.Controls.Add(this.lblSpeed);
-            this.panelEM02Messages.Controls.Add(this.lblGSensor);
             this.panelEM02Messages.Controls.Add(this.lblACC);
             this.panelEM02Messages.Controls.Add(this.lblSDCard);
             this.panelEM02Messages.Controls.Add(this.lblFrontCAM);
             this.panelEM02Messages.Controls.Add(this.lblRearCAM);
             this.panelEM02Messages.Controls.Add(this.lblSoftware);
-            this.panelEM02Messages.Controls.Add(this.label32);
-            this.panelEM02Messages.Controls.Add(this.label31);
-            this.panelEM02Messages.Controls.Add(this.label30);
-            this.panelEM02Messages.Controls.Add(this.label27);
             this.panelEM02Messages.Controls.Add(this.label18);
             this.panelEM02Messages.Controls.Add(this.label17);
             this.panelEM02Messages.Controls.Add(this.label16);
             this.panelEM02Messages.Controls.Add(this.label15);
-            this.panelEM02Messages.Controls.Add(this.label14);
             this.panelEM02Messages.Controls.Add(this.label13);
             this.panelEM02Messages.Controls.Add(this.pbPushButton);
             this.panelEM02Messages.Location = new System.Drawing.Point(15, 380);
             this.panelEM02Messages.Name = "panelEM02Messages";
             this.panelEM02Messages.Size = new System.Drawing.Size(1128, 150);
             this.panelEM02Messages.TabIndex = 35;
-            // 
-            // lblFirmware
-            // 
-            this.lblFirmware.AutoSize = true;
-            this.lblFirmware.Font = new System.Drawing.Font("Microsoft JhengHei UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblFirmware.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lblFirmware.Location = new System.Drawing.Point(57, 40);
-            this.lblFirmware.Name = "lblFirmware";
-            this.lblFirmware.Size = new System.Drawing.Size(18, 24);
-            this.lblFirmware.TabIndex = 54;
-            this.lblFirmware.Tag = "0002";
-            this.lblFirmware.Text = "-";
-            // 
-            // lblCarModel
-            // 
-            this.lblCarModel.AutoSize = true;
-            this.lblCarModel.Font = new System.Drawing.Font("Microsoft JhengHei UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblCarModel.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lblCarModel.Location = new System.Drawing.Point(57, 64);
-            this.lblCarModel.Name = "lblCarModel";
-            this.lblCarModel.Size = new System.Drawing.Size(18, 24);
-            this.lblCarModel.TabIndex = 53;
-            this.lblCarModel.Tag = "0003";
-            this.lblCarModel.Text = "-";
-            // 
-            // lblGPS
-            // 
-            this.lblGPS.AutoSize = true;
-            this.lblGPS.Font = new System.Drawing.Font("Microsoft JhengHei UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblGPS.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lblGPS.Location = new System.Drawing.Point(57, 88);
-            this.lblGPS.Name = "lblGPS";
-            this.lblGPS.Size = new System.Drawing.Size(18, 24);
-            this.lblGPS.TabIndex = 52;
-            this.lblGPS.Tag = "0004";
-            this.lblGPS.Text = "-";
-            // 
-            // lblSpeed
-            // 
-            this.lblSpeed.AutoSize = true;
-            this.lblSpeed.Font = new System.Drawing.Font("Microsoft JhengHei UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblSpeed.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lblSpeed.Location = new System.Drawing.Point(57, 115);
-            this.lblSpeed.Name = "lblSpeed";
-            this.lblSpeed.Size = new System.Drawing.Size(18, 24);
-            this.lblSpeed.TabIndex = 51;
-            this.lblSpeed.Tag = "0005";
-            this.lblSpeed.Text = "-";
-            // 
-            // lblGSensor
-            // 
-            this.lblGSensor.AutoSize = true;
-            this.lblGSensor.Font = new System.Drawing.Font("Microsoft JhengHei UI", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.lblGSensor.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lblGSensor.Location = new System.Drawing.Point(491, 16);
-            this.lblGSensor.Name = "lblGSensor";
-            this.lblGSensor.Size = new System.Drawing.Size(18, 24);
-            this.lblGSensor.TabIndex = 50;
-            this.lblGSensor.Tag = "0006";
-            this.lblGSensor.Text = "-";
             // 
             // lblACC
             // 
@@ -1784,50 +1629,6 @@
             this.lblSoftware.Tag = "0001";
             this.lblSoftware.Text = "-";
             // 
-            // label32
-            // 
-            this.label32.AutoSize = true;
-            this.label32.Font = new System.Drawing.Font("Microsoft JhengHei UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label32.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label32.Location = new System.Drawing.Point(3, 64);
-            this.label32.Name = "label32";
-            this.label32.Size = new System.Drawing.Size(52, 24);
-            this.label32.TabIndex = 44;
-            this.label32.Text = "車型:";
-            // 
-            // label31
-            // 
-            this.label31.AutoSize = true;
-            this.label31.Font = new System.Drawing.Font("Microsoft JhengHei UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label31.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label31.Location = new System.Drawing.Point(3, 88);
-            this.label31.Name = "label31";
-            this.label31.Size = new System.Drawing.Size(52, 24);
-            this.label31.TabIndex = 43;
-            this.label31.Text = "衛星:";
-            // 
-            // label30
-            // 
-            this.label30.AutoSize = true;
-            this.label30.Font = new System.Drawing.Font("Microsoft JhengHei UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label30.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label30.Location = new System.Drawing.Point(3, 115);
-            this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(52, 24);
-            this.label30.TabIndex = 42;
-            this.label30.Text = "車速:";
-            // 
-            // label27
-            // 
-            this.label27.AutoSize = true;
-            this.label27.Font = new System.Drawing.Font("Microsoft JhengHei UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label27.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label27.Location = new System.Drawing.Point(397, 16);
-            this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(98, 24);
-            this.label27.TabIndex = 41;
-            this.label27.Text = "G-Sensor:";
-            // 
             // label18
             // 
             this.label18.AutoSize = true;
@@ -1871,17 +1672,6 @@
             this.label15.Size = new System.Drawing.Size(71, 24);
             this.label15.TabIndex = 37;
             this.label15.Text = "後鏡頭:";
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Microsoft JhengHei UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label14.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label14.Location = new System.Drawing.Point(3, 40);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(52, 24);
-            this.label14.TabIndex = 36;
-            this.label14.Text = "軔體:";
             // 
             // label13
             // 
@@ -1943,11 +1733,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
@@ -2046,11 +1831,6 @@
         private PictureBox pictureBox3;
         private PictureBox pictureBox2;
         private PictureBox pictureBox1;
-        private GroupBox groupBox2;
-        private Label label2;
-        private PictureBox pictureBox4;
-        private PictureBox pictureBox5;
-        private PictureBox pictureBox6;
         private GroupBox groupBox3;
         private Label label3;
         private PictureBox pictureBox7;
@@ -2150,21 +1930,11 @@
         private Button btnSaveSetting;
         private PictureBox pbPushButton;
         private Panel panelEM02Messages;
-        private Label label32;
-        private Label label31;
-        private Label label30;
-        private Label label27;
         private Label label18;
         private Label label17;
         private Label label16;
         private Label label15;
-        private Label label14;
         private Label label13;
-        private Label lblFirmware;
-        private Label lblCarModel;
-        private Label lblGPS;
-        private Label lblSpeed;
-        private Label lblGSensor;
         private Label lblACC;
         private Label lblSDCard;
         private Label lblFrontCAM;

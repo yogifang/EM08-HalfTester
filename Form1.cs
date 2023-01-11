@@ -35,10 +35,10 @@ namespace EM02_E_HalfTester
         delegate void GoGetBarCodeData(byte[] buffer);
         private Thread threadBarCode;
 
-        private SerialPort? _EM02Port;
-        private bool EM02_receiving = false;
-        delegate void GoGetEM02Data(byte[] buffer);
-        private Thread threadEM02;
+        private SerialPort? _EM08Port;
+        private bool EM08_receiving = false;
+        delegate void GoGetEM08Data(byte[] buffer);
+        private Thread threadEM08;
 
         private SerialPort? _MESPort;
         private bool MES_receiving = false;
@@ -60,13 +60,13 @@ namespace EM02_E_HalfTester
         private bool bWaitACC = false;
 
 
-        private const UInt16 lenBufEM02 = 512;
-        private byte[] ringBufferEM02;
-        private int ringCountEM02 = 0;
-        private int ringOutputEM02 = 0;
-        private int ringInputEM02 = 0;
+        private const UInt16 lenBufEM08 = 512;
+        private byte[] ringBufferEM08;
+        private int ringCountEM08 = 0;
+        private int ringOutputEM08 = 0;
+        private int ringInputEM08 = 0;
   
-        private int iStateEM02 = 0;
+        private int iStateEM08 = 0;
         private int iCntEM02 = 0;
         private int iCntCount = 0;
 
@@ -113,7 +113,7 @@ namespace EM02_E_HalfTester
         DateTime time00;
         DateTime time01;
 
-        class EM02DBGTYPE
+        class EM08DBGTYPE
         {
             public string code { get; set; }
             public string name { get; set; }
@@ -121,7 +121,7 @@ namespace EM02_E_HalfTester
 
         }
 
-        class EM02ERRORCODE
+        class EM08ERRORCODE
         {
             public string errorCode { get; set; }
             public string description { get; set; }
@@ -132,21 +132,21 @@ namespace EM02_E_HalfTester
         {
             public TestResult()
             {
-                allErrors = new List<EM02ERRORCODE>();
+                allErrors = new List<EM08ERRORCODE>();
                 voltages = new Dictionary<string, object>();
             }
-            public List<EM02ERRORCODE>?  allErrors { get; set; } 
+            public List<EM08ERRORCODE>?  allErrors { get; set; } 
             public Dictionary<string, object> voltages { get; set; }
         }
      
 
-        private List<EM02DBGTYPE> car_type = new List<EM02DBGTYPE>();
-        private List<EM02DBGTYPE> gpsStatus = new List<EM02DBGTYPE>();
-        private List<EM02DBGTYPE> gSensorStatus = new List<EM02DBGTYPE>();
-        private List<EM02DBGTYPE> sdCardStatus = new List<EM02DBGTYPE>();
-        private List<EM02DBGTYPE> cameraStatus = new List<EM02DBGTYPE>();
-        private List<EM02ERRORCODE> AllErrors = new List<EM02ERRORCODE>();
-        private List<EM02ERRORCODE> testResults = new List<EM02ERRORCODE>();
+        private List<EM08DBGTYPE> car_type = new List<EM08DBGTYPE>();
+        private List<EM08DBGTYPE> gpsStatus = new List<EM08DBGTYPE>();
+        private List<EM08DBGTYPE> gSensorStatus = new List<EM08DBGTYPE>();
+        private List<EM08DBGTYPE> sdCardStatus = new List<EM08DBGTYPE>();
+        private List<EM08DBGTYPE> cameraStatus = new List<EM08DBGTYPE>();
+        private List<EM08ERRORCODE> AllErrors = new List<EM08ERRORCODE>();
+        private List<EM08ERRORCODE> testResults = new List<EM08ERRORCODE>();
 
         private  Color colorError = Color.Red;
         private Color colorGoing = Color.Green;
@@ -213,7 +213,7 @@ namespace EM02_E_HalfTester
         }
 
 
-        Dynamic em02VoltageDatas = new Dynamic();
+        Dynamic em08VoltageDatas = new Dynamic();
 
 
 
@@ -325,9 +325,9 @@ namespace EM02_E_HalfTester
             }
         }
 
-        private void initComEM02(string sPort)
+        private void initComEM08(string sPort)
         {
-            _EM02Port = new SerialPort()
+            _EM08Port = new SerialPort()
             {
                 PortName = sPort,
                 BaudRate = 115200,
@@ -337,23 +337,23 @@ namespace EM02_E_HalfTester
                 Handshake = Handshake.None
             };
 
-            if (_EM02Port.IsOpen == false)
+            if (_EM08Port.IsOpen == false)
             {
                 try
                 {
-                    _EM02Port.Open();
+                    _EM08Port.Open();
                     //開啟 Serial Port
-                    EM02_receiving = true;
+                    EM08_receiving = true;
                     //開啟執行續做接收動作
-                    threadEM02 = new Thread(DoReceiveEM02);
-                    threadEM02.IsBackground = true;
-                    threadEM02.Start();
+                    threadEM08 = new Thread(DoReceiveEM08);
+                    threadEM08.IsBackground = true;
+                    threadEM08.Start();
 
                 }
                 catch (Exception)
                 {
                     // port will not be open, therefore will become null
-                    MessageBox.Show("無法開啟EM02 Port!");
+                    MessageBox.Show("無法開啟EM08 Port!");
                  //   Application.Exit();
                 }
             }
@@ -411,19 +411,19 @@ namespace EM02_E_HalfTester
             }
         }
 
-        private void DoReceiveEM02()
+        private void DoReceiveEM08()
         {
             Byte[] buffer = new Byte[512];
 
             try
             {
-                while (EM02_receiving)
+                while (EM08_receiving)
                 {
-                    if (_EM02Port?.BytesToRead >= 1 && _EM02Port.BytesToWrite == 0)
+                    if (_EM08Port?.BytesToRead >= 1 && _EM08Port.BytesToWrite == 0)
                     {
-                        Int32 length = _EM02Port.Read(buffer, 0, buffer.Length);
+                        Int32 length = _EM08Port.Read(buffer, 0, buffer.Length);
                         Array.Resize(ref buffer, length);
-                        GoGetEM02Data d = new GoGetEM02Data(EM02Show);
+                        GoGetEM08Data d = new GoGetEM08Data(EM08Show);
                         this.Invoke(d, new Object[] { buffer });
                         Array.Resize(ref buffer, length);
                     }
@@ -461,50 +461,50 @@ namespace EM02_E_HalfTester
                 MessageBox.Show(ex.Message);
             }
         }
-        private void SetRingEM02(byte byData)
+        private void SetRingEM08(byte byData)
         {
-            ringBufferEM02[ringInputEM02] = byData;
-            ringCountEM02++;
-            ringInputEM02 = (ringInputEM02 + 1) & (lenBufEM02 - 1);
+            ringBufferEM08[ringInputEM08] = byData;
+            ringCountEM08++;
+            ringInputEM08 = (ringInputEM08 + 1) & (lenBufEM08 - 1);
         }
-        private byte GetRingEM02()
+        private byte GetRingEM08()
         {
-            if (ringCountEM02 == 0)
+            if (ringCountEM08 == 0)
             {
                 return 0;
             }
-                byte byData = ringBufferEM02[ringOutputEM02];
-                ringCountEM02--;
-                if (ringCountEM02 < 0) ringCountEM02 = 0;
-                ringOutputEM02 = (ringOutputEM02 + 1) & (lenBufEM02 - 1);
+                byte byData = ringBufferEM08[ringOutputEM08];
+                ringCountEM08--;
+                if (ringCountEM08 < 0) ringCountEM08 = 0;
+                ringOutputEM08 = (ringOutputEM08 + 1) & (lenBufEM08 - 1);
                 return byData;
             
             
         }
     
-        private int  SearchEM02Tail() // tail is 0x1b 0x5b 0x6d  [ESC][m
+        private int  SearchEM08Tail() // tail is 0x1b 0x5b 0x6d  [ESC][m
         {
 
-            int iCntSearch = ringCountEM02;
+            int iCntSearch = ringCountEM08;
             int iIdxSearch = 0;
             int iOp = 0;
             while (iCntSearch >=3)
             {
-                iOp = (ringOutputEM02 + iIdxSearch) & (lenBufEM02 - 1);
+                iOp = (ringOutputEM08 + iIdxSearch) & (lenBufEM08 - 1);
                 iIdxSearch++;
                 iCntSearch--;
-                if (ringBufferEM02[iOp] == 0x1b)
+                if (ringBufferEM08[iOp] == 0x1b)
                 {  
                     iCntSearch--;
-                    iOp = (ringOutputEM02 + iIdxSearch) & (lenBufEM02 - 1);
+                    iOp = (ringOutputEM08 + iIdxSearch) & (lenBufEM08 - 1);
                     iIdxSearch++;
-                    if (ringBufferEM02[iOp] == 0x5b)
+                    if (ringBufferEM08[iOp] == 0x5b)
                     { 
                         
-                        iOp = (ringOutputEM02 + iIdxSearch) & (lenBufEM02 - 1);
+                        iOp = (ringOutputEM08 + iIdxSearch) & (lenBufEM08 - 1);
                         iIdxSearch++;
                         iCntSearch--;
-                        if (ringBufferEM02[iOp] == 0x6d)
+                        if (ringBufferEM08[iOp] == 0x6d)
                         {
                             return iIdxSearch + 1;
                         }
@@ -612,13 +612,13 @@ namespace EM02_E_HalfTester
                 return 0;   // nothing in there
             }
         }
-        public void EM02Show(byte[] buffer)
+        public void EM08Show(byte[] buffer)
         {
 
             byte[] buf = buffer;
             for (int i = 0; i < buf.Length; i++)
             {
-                SetRingEM02(buf[i]);
+                SetRingEM08(buf[i]);
             }
         }
 
@@ -674,44 +674,44 @@ namespace EM02_E_HalfTester
 
         }
        
-        private void  procEM02() 
+        private void  procEM08() 
         {
             const byte ESC = 0x1b;
               
-            switch (iStateEM02)
+            switch (iStateEM08)
             {
                 case 0:
                    
-                    if (ringCountEM02 >= 11)
+                    if (ringCountEM08 >= 11)
                     {
                         lblLength.Text = iCntCount.ToString();
                         iCntCount++;
                         do {                      
-                                        if (GetRingEM02() == ESC)
+                                        if (GetRingEM08() == ESC)
                                         {
-                                            if (GetRingEM02() == '[')
+                                            if (GetRingEM08() == '[')
                                             {
-                                                if (GetRingEM02() == '1')
+                                                if (GetRingEM08() == '1')
                                                 {
-                                                    if (GetRingEM02() == ';')
+                                                    if (GetRingEM08() == ';')
                                                     {
-                                                        if (GetRingEM02() == '3')
+                                                        if (GetRingEM08() == '3')
                                                         {
-                                                            if (GetRingEM02() == '3')
+                                                            if (GetRingEM08() == '3')
                                                             {
-                                                                if (GetRingEM02() == 'm')
+                                                                if (GetRingEM08() == 'm')
                                                                 {
-                                                                    if (GetRingEM02() == '$')
+                                                                    if (GetRingEM08() == '$')
                                                                     {
-                                                                        if (GetRingEM02() == 'G')
+                                                                        if (GetRingEM08() == 'G')
                                                                         {
-                                                                            if (GetRingEM02() == 'M')
+                                                                            if (GetRingEM08() == 'M')
                                                                             {
-                                                                                if (GetRingEM02() == ',')
+                                                                                if (GetRingEM08() == ',')
                                                                                 {
                                                                                     iCntEM02++;
                                                                                     lblTime.Text = iCntEM02.ToString();
-                                                                                    iStateEM02++;
+                                                                                    iStateEM08++;
                                                                                     break;
                                                                                 }
                                                                             }
@@ -724,20 +724,20 @@ namespace EM02_E_HalfTester
                                                 }
                                             }
                                         }
-                        } while (ringCountEM02 >= 11);
+                        } while (ringCountEM08 >= 11);
                     }
                     break;
                 case 1:
-                    if( ringCountEM02 >= 13)
+                    if( ringCountEM08 >= 13)
                     {
-                      //  lblLength.Text = ringCountEM02.ToString();
-                        int iLFCRPos = SearchEM02Tail();
+                      //  lblLength.Text = ringCountEM08.ToString();
+                        int iLFCRPos = SearchEM08Tail();
                         if (iLFCRPos > 0)  // find a Line feed
                         {
                             byte[] buf = new byte[iLFCRPos];
                             for (int i = 0; i < iLFCRPos; i++)
                             {
-                                buf[i] = GetRingEM02();
+                                buf[i] = GetRingEM08();
                             }
                             var str = System.Text.Encoding.Default.GetString(buf);
                             string[] strTokens = str.Split(',');
@@ -754,31 +754,31 @@ namespace EM02_E_HalfTester
                                     lblSoftware.Text = strTokens[1];
                                     lblSoftware.ForeColor = (SoftwareVersion != "" && SoftwareVersion != lblSoftware.Text) ? colorError: colorOK;
       
-                                    lblFirmware.Text = strTokens[2];
-                                    lblFirmware.ForeColor = (FirmwareVersion != "" && FirmwareVersion != lblFirmware.Text) ? colorError : colorOK;
-                                    EM02DBGTYPE em02Msg = car_type.Find(x => x.code == strTokens[3]);
-                                    lblCarModel.Text = em02Msg?.name;
-                                    lblCarModel.ForeColor = (Color)(em02Msg?.textColor);
+                                //    lblFirmware.Text = strTokens[2];
+                                 //   lblFirmware.ForeColor = (FirmwareVersion != "" && FirmwareVersion != lblFirmware.Text) ? colorError : colorOK;
+                                //    EM08DBGTYPE em02Msg = car_type.Find(x => x.code == strTokens[3]);
+                                //    lblCarModel.Text = em02Msg?.name;
+                                //    lblCarModel.ForeColor = (Color)(em02Msg?.textColor);
 
-                                    em02Msg = gpsStatus.Find(x => x.code == strTokens[4]);
-                                    lblGPS.Text = em02Msg?.name;
-                                    lblGPS.ForeColor = (Color)(em02Msg?.textColor);
+                                //    em02Msg = gpsStatus.Find(x => x.code == strTokens[4]);
+                                //    lblGPS.Text = em02Msg?.name;
+                                //    lblGPS.ForeColor = (Color)(em02Msg?.textColor);
                                
 
-                                    lblSpeed.Text = strTokens[5];
-                                    lblSpeed.ForeColor = (lblSpeed.Text == "000" && lblSpeed.Text != "-") ? colorGoing : colorOK;
-                                    if(lblSpeed.Text == "-")
-                                    {
-                                        lblSpeed.ForeColor = colorError;
-                                    }
+                                //    lblSpeed.Text = strTokens[5];
+                                 //   lblSpeed.ForeColor = (lblSpeed.Text == "000" && lblSpeed.Text != "-") ? colorGoing : colorOK;
+                               //   if(lblSpeed.Text == "-")
+                               //     {
+                              //          lblSpeed.ForeColor = colorError;
+                               //     }
                                   
-                                    em02Msg = gSensorStatus.Find(x => x.code == strTokens[6]);
-                                    lblGSensor.Text = em02Msg?.name;
-                                    lblGSensor.ForeColor = (Color)(em02Msg?.textColor);
+                               //     em02Msg = gSensorStatus.Find(x => x.code == strTokens[6]);
+                               //     lblGSensor.Text = em02Msg?.name;
+                                //    lblGSensor.ForeColor = (Color)(em02Msg?.textColor);
 
                                     lblACC.Text = strTokens[7];
-                           
-                                    em02Msg = sdCardStatus.Find(x => x.code == strTokens[9]);
+
+                                    EM08DBGTYPE em02Msg = sdCardStatus.Find(x => x.code == strTokens[9]);
                                     lblSDCard.Text = em02Msg?.name;
                                     lblSDCard.ForeColor = (Color)(em02Msg?.textColor);
                                 
@@ -791,10 +791,10 @@ namespace EM02_E_HalfTester
                                     lblRearCAM.Text = em02Msg?.name;
                                     lblRearCAM.ForeColor = (Color)(em02Msg?.textColor);   
 
-                                    em02VoltageDatas["SN"] = lblSN.Text.Replace("\r" , String.Empty).Replace("\n", String.Empty);
+                                    em08VoltageDatas["SN"] = lblSN.Text.Replace("\r" , String.Empty).Replace("\n", String.Empty);
                                 
-                                    em02VoltageDatas["SoftwareVersion"] = lblSoftware.Text;
-                                    em02VoltageDatas["FirmwareVersion"] = lblFirmware.Text;
+                                    em08VoltageDatas["SoftwareVersion"] = lblSoftware.Text;
+                              //      em08VoltageDatas["FirmwareVersion"] = lblFirmware.Text;
                                     
                                     break;
                                 case "BOOT":
@@ -816,19 +816,19 @@ namespace EM02_E_HalfTester
                                     lblEM02.Text = strTokens[0];
                                     break;
                                 default:
-                                    iStateEM02 = 0;
+                                    iStateEM08 = 0;
                                     break;
                             }
-                            iStateEM02=0;
+                            iStateEM08=0;
                         }
                     }
                    
                     break;
                 case 2:
-                    iStateEM02 = 0;
+                    iStateEM08 = 0;
                     break;
                  default:
-                    iStateEM02 = 0;
+                    iStateEM08 = 0;
                     break;
             }
         }  
@@ -861,10 +861,10 @@ namespace EM02_E_HalfTester
                             {
                                 bSerialNO = true;
                                 clearComBuffer();
-                                clearEM02Msg();
+                                clearEM08Msg();
                                 iStateBarCode++;
                                 iStateUT5526 = 0;
-                                iStateEM02 = 0;
+                                iStateEM08 = 0;
                              //   iCntGetUT5526 = 0;
                             } else
                             {
@@ -915,10 +915,10 @@ namespace EM02_E_HalfTester
                             {
                                 bSerialNO = true;
                                 clearComBuffer();
-                                clearEM02Msg();
+                                clearEM08Msg();
                                 iStateBarCode++;
                                 iStateUT5526 = 0;
-                                iStateEM02 = 0;
+                                iStateEM08 = 0;
                                 //   iCntGetUT5526 = 0;
                             }
                             else
@@ -1069,7 +1069,7 @@ namespace EM02_E_HalfTester
                                                     bErr = false;
                                                 }
                                                 iErrors = (bErr) ? (iErrors + 1) : iErrors;
-                                                em02VoltageDatas[ctrl.Text] = iCurrentData.ToString();
+                                                em08VoltageDatas[ctrl.Text] = iCurrentData.ToString();
                                                 DisplayGroup((GroupBox)ctrl, collectData[iIdxGetUT5526].CurrentData, bErr);
                                             }
                                         }
@@ -1265,12 +1265,12 @@ namespace EM02_E_HalfTester
             procMES();
     //        if(bSerialNO == true)
     //        {
-           //     procEM02();
+           //     procEM08();
      //       } 
 
             if(bSerialNO == true)
             {
-                procEM02();
+                procEM08();
                 if (bWaitACC == false)
                 {
                     ProcUT5526();
@@ -1292,7 +1292,7 @@ namespace EM02_E_HalfTester
             imgDigiError = new Image[10];
             imgDigiErrorDot = new Image[10];
             ringBufferUT5526 = new byte[lenBufUT5526];
-            ringBufferEM02 = new byte[lenBufEM02];
+            ringBufferEM08 = new byte[lenBufEM08];
             ringBufferBarCode = new byte[lenBufBarCode];
             ringBufferMES= new byte[lenBufMES];
 
@@ -1351,7 +1351,7 @@ namespace EM02_E_HalfTester
                                     collectData.Add(new ChannelData() { ChannelName = "Dummy", CmdSelected = "01MOCH" + channelInt.ToString().PadLeft(2, '0'), PreviousData = 0, CurrentData = 0, StandardData = iStandard });
                                 }
                                 collectData.Add(new ChannelData() { ChannelName = ctrlGp.Text, CmdSelected = "01MOCH" + channelInt.ToString().PadLeft(2, '0'), PreviousData = 0, CurrentData = 0, StandardData = iStandard });
-                                em02VoltageDatas[ctrlGp.Text] = "0.0";
+                                em08VoltageDatas[ctrlGp.Text] = "0.0";
                             }
                         }
                     }
@@ -1359,52 +1359,52 @@ namespace EM02_E_HalfTester
 
             }
 
-            car_type.Add(new EM02DBGTYPE() { code = "0", name = "UNKNOW", textColor = colorError } );
-            car_type.Add(new EM02DBGTYPE() { code = "1", name = "AZ", textColor = colorOK });
-            car_type.Add(new EM02DBGTYPE() { code = "2", name = "RE", textColor = colorOK });
-            car_type.Add(new EM02DBGTYPE() { code = "3", name = "NS", textColor = colorOK });
-            car_type.Add(new EM02DBGTYPE() { code = "4", name = "SR", textColor = colorOK });
-            car_type.Add(new EM02DBGTYPE() { code = "5", name = "DE", textColor = colorOK });
-            car_type.Add(new EM02DBGTYPE() { code = "6", name = "JD", textColor = colorOK });
-            car_type.Add(new EM02DBGTYPE() { code = "7", name = "NPZ", textColor = colorOK });
+            car_type.Add(new EM08DBGTYPE() { code = "0", name = "UNKNOW", textColor = colorError } );
+            car_type.Add(new EM08DBGTYPE() { code = "1", name = "AZ", textColor = colorOK });
+            car_type.Add(new EM08DBGTYPE() { code = "2", name = "RE", textColor = colorOK });
+            car_type.Add(new EM08DBGTYPE() { code = "3", name = "NS", textColor = colorOK });
+            car_type.Add(new EM08DBGTYPE() { code = "4", name = "SR", textColor = colorOK });
+            car_type.Add(new EM08DBGTYPE() { code = "5", name = "DE", textColor = colorOK });
+            car_type.Add(new EM08DBGTYPE() { code = "6", name = "JD", textColor = colorOK });
+            car_type.Add(new EM08DBGTYPE() { code = "7", name = "NPZ", textColor = colorOK });
 
-            gpsStatus.Add(new EM02DBGTYPE() { code = "-1", name = "尚未抓取到NEMA資料", textColor = colorError });
-            gpsStatus.Add(new EM02DBGTYPE() { code = "0", name = "已正確抓取到NEMA資料", textColor = colorGoing });
-            gpsStatus.Add(new EM02DBGTYPE() { code = "1", name = "時間校正完成", textColor = colorOK });
-            gpsStatus.Add(new EM02DBGTYPE() { code = "2", name = "定位完成", textColor = colorOK });
+            gpsStatus.Add(new EM08DBGTYPE() { code = "-1", name = "尚未抓取到NEMA資料", textColor = colorError });
+            gpsStatus.Add(new EM08DBGTYPE() { code = "0", name = "已正確抓取到NEMA資料", textColor = colorGoing });
+            gpsStatus.Add(new EM08DBGTYPE() { code = "1", name = "時間校正完成", textColor = colorOK });
+            gpsStatus.Add(new EM08DBGTYPE() { code = "2", name = "定位完成", textColor = colorOK });
 
-            gSensorStatus.Add(new EM02DBGTYPE() { code = "0", name = "未偵測到裝置", textColor = colorError });
-            gSensorStatus.Add(new EM02DBGTYPE() { code = "1", name = "有偵測到裝置", textColor = colorOK });
+            gSensorStatus.Add(new EM08DBGTYPE() { code = "0", name = "未偵測到裝置", textColor = colorError });
+            gSensorStatus.Add(new EM08DBGTYPE() { code = "1", name = "有偵測到裝置", textColor = colorOK });
 
-            sdCardStatus.Add(new EM02DBGTYPE() { code = "0", name = "未插卡", textColor = colorError });
-            sdCardStatus.Add(new EM02DBGTYPE() { code = "1", name = "插入偵測", textColor = colorGoing });
-            sdCardStatus.Add(new EM02DBGTYPE() { code = "2", name = "卡片異常", textColor = colorError });
-            sdCardStatus.Add(new EM02DBGTYPE() { code = "3", name = "檔案系統確認中", textColor = colorGoing });
-            sdCardStatus.Add(new EM02DBGTYPE() { code = "4", name = "檔案系統確認失敗", textColor = colorError });
-            sdCardStatus.Add(new EM02DBGTYPE() { code = "5", name = "檔案系統出現例外", textColor = colorError });
-            sdCardStatus.Add(new EM02DBGTYPE() { code = "6", name = "SD卡掛載完成", textColor = colorOK });
-            sdCardStatus.Add(new EM02DBGTYPE() { code = "7", name = "SD卡掛載失敗", textColor = colorError });
-            sdCardStatus.Add(new EM02DBGTYPE() { code = "8", name = "SD卡閒置", textColor = colorError });
+            sdCardStatus.Add(new EM08DBGTYPE() { code = "0", name = "未插卡", textColor = colorError });
+            sdCardStatus.Add(new EM08DBGTYPE() { code = "1", name = "插入偵測", textColor = colorGoing });
+            sdCardStatus.Add(new EM08DBGTYPE() { code = "2", name = "卡片異常", textColor = colorError });
+            sdCardStatus.Add(new EM08DBGTYPE() { code = "3", name = "檔案系統確認中", textColor = colorGoing });
+            sdCardStatus.Add(new EM08DBGTYPE() { code = "4", name = "檔案系統確認失敗", textColor = colorError });
+            sdCardStatus.Add(new EM08DBGTYPE() { code = "5", name = "檔案系統出現例外", textColor = colorError });
+            sdCardStatus.Add(new EM08DBGTYPE() { code = "6", name = "SD卡掛載完成", textColor = colorOK });
+            sdCardStatus.Add(new EM08DBGTYPE() { code = "7", name = "SD卡掛載失敗", textColor = colorError });
+            sdCardStatus.Add(new EM08DBGTYPE() { code = "8", name = "SD卡閒置", textColor = colorError });
 
-            cameraStatus.Add(new EM02DBGTYPE() { code = "0", name = "1080P25", textColor = colorOK });
-            cameraStatus.Add(new EM02DBGTYPE() { code = "1", name = "1080P30", textColor = colorOK });
-            cameraStatus.Add(new EM02DBGTYPE() { code = "2", name = "720P25", textColor = colorOK });
-            cameraStatus.Add(new EM02DBGTYPE() { code = "3", name = "720P30", textColor = colorOK });
-            cameraStatus.Add(new EM02DBGTYPE() { code = "4", name = "720P60", textColor = colorOK });
-            cameraStatus.Add(new EM02DBGTYPE() { code = "5", name = "無連接", textColor = colorError });
+            cameraStatus.Add(new EM08DBGTYPE() { code = "0", name = "1080P25", textColor = colorOK });
+            cameraStatus.Add(new EM08DBGTYPE() { code = "1", name = "1080P30", textColor = colorOK });
+            cameraStatus.Add(new EM08DBGTYPE() { code = "2", name = "720P25", textColor = colorOK });
+            cameraStatus.Add(new EM08DBGTYPE() { code = "3", name = "720P30", textColor = colorOK });
+            cameraStatus.Add(new EM08DBGTYPE() { code = "4", name = "720P60", textColor = colorOK });
+            cameraStatus.Add(new EM08DBGTYPE() { code = "5", name = "無連接", textColor = colorError });
 
-            AllErrors.Add(new EM02ERRORCODE() { errorCode = "EM_0001", description = "軟體版本錯誤" });
-            AllErrors.Add(new EM02ERRORCODE() { errorCode = "EM_0002", description = "軔體版本錯誤" });
-            AllErrors.Add(new EM02ERRORCODE() { errorCode = "EM_0003", description = "車型設定錯誤" });
-            AllErrors.Add(new EM02ERRORCODE() { errorCode = "EM_0004", description = "衛星狀態錯誤" });
-            AllErrors.Add(new EM02ERRORCODE() { errorCode = "EM_0005", description = "CANBUS接收錯誤" });
-            AllErrors.Add(new EM02ERRORCODE() { errorCode = "EM_0006", description = "GSensor NG" });
-            AllErrors.Add(new EM02ERRORCODE() { errorCode = "EM_0007", description = "GPIO R NG" });
-            AllErrors.Add(new EM02ERRORCODE() { errorCode = "EM_0008", description = "GPIO ACC NG" });
-            AllErrors.Add(new EM02ERRORCODE() { errorCode = "EM_0009", description = "SDCard狀態錯誤" });
-            AllErrors.Add(new EM02ERRORCODE() { errorCode = "EM_0010", description = "前鏡頭狀態錯誤" });
-            AllErrors.Add(new EM02ERRORCODE() { errorCode = "EM_0011", description = "後鏡頭狀態錯誤" });
-            AllErrors.Add(new EM02ERRORCODE() { errorCode = "EM_0012", description = "電壓錯誤" });
+            AllErrors.Add(new EM08ERRORCODE() { errorCode = "EM_0001", description = "軟體版本錯誤" });
+            AllErrors.Add(new EM08ERRORCODE() { errorCode = "EM_0002", description = "軔體版本錯誤" });
+            AllErrors.Add(new EM08ERRORCODE() { errorCode = "EM_0003", description = "車型設定錯誤" });
+            AllErrors.Add(new EM08ERRORCODE() { errorCode = "EM_0004", description = "衛星狀態錯誤" });
+            AllErrors.Add(new EM08ERRORCODE() { errorCode = "EM_0005", description = "CANBUS接收錯誤" });
+            AllErrors.Add(new EM08ERRORCODE() { errorCode = "EM_0006", description = "GSensor NG" });
+            AllErrors.Add(new EM08ERRORCODE() { errorCode = "EM_0007", description = "GPIO R NG" });
+            AllErrors.Add(new EM08ERRORCODE() { errorCode = "EM_0008", description = "GPIO ACC NG" });
+            AllErrors.Add(new EM08ERRORCODE() { errorCode = "EM_0009", description = "SDCard狀態錯誤" });
+            AllErrors.Add(new EM08ERRORCODE() { errorCode = "EM_0010", description = "前鏡頭狀態錯誤" });
+            AllErrors.Add(new EM08ERRORCODE() { errorCode = "EM_0011", description = "後鏡頭狀態錯誤" });
+            AllErrors.Add(new EM08ERRORCODE() { errorCode = "EM_0012", description = "電壓錯誤" });
 
             imgDigiNormal[0] = Resource1._0;
             imgDigiNormal[1] = Resource1._1;
@@ -1520,14 +1520,14 @@ namespace EM02_E_HalfTester
             InitializeTimer();
             initComUT5526(comUT5526);
             initComBarCode(comBarCode);
-            initComEM02(comEM02);
+            initComEM08(comEM02);
             InitComMES(comMES);
 
             if (bErrorUT5526 == false)
             {
                 SetUT5526VoltRange();
             }
-            clearEM02Msg();
+            clearEM08Msg();
 
         }
 
@@ -1681,9 +1681,9 @@ namespace EM02_E_HalfTester
             {
                 _BarCodePort.Close();
             }
-            if (_EM02Port?.IsOpen == true)
+            if (_EM08Port?.IsOpen == true)
             {
-                _EM02Port.Close();
+                _EM08Port.Close();
             }
             Environment.Exit(Environment.ExitCode);
 
@@ -1710,7 +1710,7 @@ namespace EM02_E_HalfTester
             {
                 ResetLedDisplay();
                 iIdxGetUT5526 = 0;
-                iCntGetUT5526 = 19;
+                iCntGetUT5526 = 18;
                 bReadUT5526 = true;
             } else
             {
@@ -1731,16 +1731,16 @@ namespace EM02_E_HalfTester
             {
                 _BarCodePort?.Close();
             };
-            if (_EM02Port?.IsOpen == true)
+            if (_EM08Port?.IsOpen == true)
             {
-                _EM02Port?.Close();
+                _EM08Port?.Close();
             }
             if (_UT5526Port?.IsOpen == true)
             {
                 _UT5526Port?.Close();
             }
       
-            initComEM02(comEM02);
+            initComEM08(comEM02);
             initComUT5526(comUT5526);
             initComBarCode(comBarCode);
           
@@ -1749,12 +1749,12 @@ namespace EM02_E_HalfTester
         private void collectErrors ()
         {
             testResults.Clear(); // clear old data ;
-            em02VoltageDatas["RESULT"] = "PASS";
-            //    testResults.Add (new EM02ERRORCODE() {  errorCode = "Result" , descript})
+            em08VoltageDatas["RESULT"] = "PASS";
+            //    testResults.Add (new EM08ERRORCODE() {  errorCode = "Result" , descript})
             if (iErrors > 0)
             {
-                em02VoltageDatas["RESULT"] = "FAIL";
-                testResults.Add(new EM02ERRORCODE() { errorCode = "EM_0012", description = this.AllErrors?.Find(x => x.errorCode == "EM_0012").description });
+                em08VoltageDatas["RESULT"] = "FAIL";
+                testResults.Add(new EM08ERRORCODE() { errorCode = "EM_0012", description = this.AllErrors?.Find(x => x.errorCode == "EM_0012").description });
                
             }
 
@@ -1771,10 +1771,10 @@ namespace EM02_E_HalfTester
                                 System.Windows.Forms.Label lblCtrl = (System.Windows.Forms.Label)control;
                                 if (lblCtrl.ForeColor == colorError)
                                 {
-                                    em02VoltageDatas["RESULT"] = "FAIL";
+                                    em08VoltageDatas["RESULT"] = "FAIL";
                                     string errCode = "EM_" + lblCtrl.Tag;
                                     string description = AllErrors.Find(x=> x.errorCode == errCode).description;
-                                    testResults.Add(new EM02ERRORCODE() { errorCode = errCode, description = description });
+                                    testResults.Add(new EM08ERRORCODE() { errorCode = errCode, description = description });
                                 }
                             }
                            
@@ -1787,19 +1787,19 @@ namespace EM02_E_HalfTester
 
         private void clearComBuffer()
         {
-            if(_EM02Port?.IsOpen == true)
+            if(_EM08Port?.IsOpen == true)
             {
-                _EM02Port.DiscardInBuffer();
+                _EM08Port.DiscardInBuffer();
             }
             if(_UT5526Port?.IsOpen == true)
             {
                 _UT5526Port.DiscardInBuffer();
             }
-            ringCountEM02 = 0;
+            ringCountEM08 = 0;
             ringCountUT5526 = 0;
-            ringInputEM02 = 0;
+            ringInputEM08 = 0;
             ringInputUT5526 = 0;
-            ringOutputEM02 = 0;
+            ringOutputEM08 = 0;
             ringOutputUT5526 = 0;
         }
         private void btnSaveSetting_Click(object sender, EventArgs e)
@@ -1846,28 +1846,28 @@ namespace EM02_E_HalfTester
         }
 
 
-        private void clearEM02Msg()
+        private void clearEM08Msg()
         {
             lblACC.Text = "-";
             lblACC.ForeColor = colorError;
-            lblCarModel.Text = "-";
-            lblCarModel.ForeColor = colorError;
-            lblFirmware.Text = "-";
-            lblFirmware.ForeColor = colorError;
+         //   lblCarModel.Text = "-";
+          //  lblCarModel.ForeColor = colorError;
+         //   lblFirmware.Text = "-";
+         //   lblFirmware.ForeColor = colorError;
             lblFrontCAM.Text = "-";
             lblFrontCAM.ForeColor = colorError;
-            lblGPS.Text = "-";
-            lblGPS.ForeColor = colorError;
-            lblGSensor.Text = "-";
-            lblGSensor.ForeColor = colorError;
+        //    lblGPS.Text = "-";
+         //   lblGPS.ForeColor = colorError;
+        //    lblGSensor.Text = "-";
+        //    lblGSensor.ForeColor = colorError;
             lblRearCAM.Text = "-";
             lblRearCAM.ForeColor = colorError;
             lblSDCard.Text = "-";
             lblSDCard.ForeColor = colorError;
             lblSoftware.Text = "-";
             lblSoftware.ForeColor = colorError;
-            lblSpeed.Text = "-";
-            lblSpeed.ForeColor = colorError;
+        //    lblSpeed.Text = "-";
+        //    lblSpeed.ForeColor = colorError;
             
             
         }
@@ -1891,7 +1891,7 @@ namespace EM02_E_HalfTester
                 TestResult tstResult = new TestResult()
                 {
                     allErrors = testResults,
-                    voltages = em02VoltageDatas._dictionary
+                    voltages = em08VoltageDatas._dictionary
 
                 };
                 var result = Newtonsoft.Json.JsonConvert.SerializeObject(tstResult);
@@ -1906,12 +1906,12 @@ namespace EM02_E_HalfTester
             }
             if( iErrors == 0 && bWaitACC == false)
             {
-                em02VoltageDatas["RESULT"] = "pass";
+                em08VoltageDatas["RESULT"] = "pass";
                 collectErrors();
                 TestResult tstResult = new TestResult()
                 {
                     allErrors = testResults,
-                    voltages = em02VoltageDatas._dictionary
+                    voltages = em08VoltageDatas._dictionary
 
                 };
                 var result = Newtonsoft.Json.JsonConvert.SerializeObject(tstResult);
@@ -1929,7 +1929,7 @@ namespace EM02_E_HalfTester
              
                 bSerialNO = false;
                 ResetLedDisplay();
-                clearEM02Msg();
+                clearEM08Msg();
                 bReadUT5526 = false;
                 iCntGetUT5526 = 0;
                 iIdxGetUT5526 = 0;
@@ -1937,13 +1937,13 @@ namespace EM02_E_HalfTester
             {
 
                 //   testResults.Add 
-                em02VoltageDatas["RESULT"] = "FAIL";
+                em08VoltageDatas["RESULT"] = "FAIL";
                 collectErrors();
                 //   var obj = Newtonsoft.Json.JsonConvert
                 TestResult tstResult = new TestResult()
                 {
                     allErrors = testResults,
-                    voltages = em02VoltageDatas._dictionary
+                    voltages = em08VoltageDatas._dictionary
 
                 };
                 var result = Newtonsoft.Json.JsonConvert.SerializeObject(tstResult);
@@ -1961,7 +1961,7 @@ namespace EM02_E_HalfTester
                 lblSN.Text = "-";
              
                 ResetLedDisplay();
-                clearEM02Msg();
+                clearEM08Msg();
                 bReadUT5526 = false;
                 iCntGetUT5526 = 0;
                 iIdxGetUT5526 = 0;
