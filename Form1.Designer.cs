@@ -124,7 +124,7 @@
             this.label33 = new System.Windows.Forms.Label();
             this.btnGetSetting = new System.Windows.Forms.Button();
             this.btnSaveSetting = new System.Windows.Forms.Button();
-            this.cbEM02 = new System.Windows.Forms.ComboBox();
+            this.cbEM08 = new System.Windows.Forms.ComboBox();
             this.label29 = new System.Windows.Forms.Label();
             this.cbUT5526 = new System.Windows.Forms.ComboBox();
             this.label28 = new System.Windows.Forms.Label();
@@ -145,7 +145,7 @@
             this.label16 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
-            this.lblEM02 = new System.Windows.Forms.Label();
+            this.lblEM08 = new System.Windows.Forms.Label();
             this.lblLength = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -1388,7 +1388,7 @@
             this.panelSetting.Controls.Add(this.label33);
             this.panelSetting.Controls.Add(this.btnGetSetting);
             this.panelSetting.Controls.Add(this.btnSaveSetting);
-            this.panelSetting.Controls.Add(this.cbEM02);
+            this.panelSetting.Controls.Add(this.cbEM08);
             this.panelSetting.Controls.Add(this.label29);
             this.panelSetting.Controls.Add(this.cbUT5526);
             this.panelSetting.Controls.Add(this.label28);
@@ -1442,14 +1442,14 @@
             this.btnSaveSetting.UseVisualStyleBackColor = true;
             this.btnSaveSetting.Click += new System.EventHandler(this.btnSaveSetting_Click);
             // 
-            // cbEM02
+            // cbEM08
             // 
-            this.cbEM02.FormattingEnabled = true;
-            this.cbEM02.Location = new System.Drawing.Point(380, 7);
-            this.cbEM02.Margin = new System.Windows.Forms.Padding(2);
-            this.cbEM02.Name = "cbEM02";
-            this.cbEM02.Size = new System.Drawing.Size(72, 23);
-            this.cbEM02.TabIndex = 5;
+            this.cbEM08.FormattingEnabled = true;
+            this.cbEM08.Location = new System.Drawing.Point(380, 7);
+            this.cbEM08.Margin = new System.Windows.Forms.Padding(2);
+            this.cbEM08.Name = "cbEM08";
+            this.cbEM08.Size = new System.Drawing.Size(72, 23);
+            this.cbEM08.TabIndex = 5;
             // 
             // label29
             // 
@@ -1685,15 +1685,15 @@
             this.label13.Tag = "";
             this.label13.Text = "軟體:";
             // 
-            // lblEM02
+            // lblEM08
             // 
-            this.lblEM02.AutoSize = true;
-            this.lblEM02.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.lblEM02.Location = new System.Drawing.Point(1056, 533);
-            this.lblEM02.Name = "lblEM02";
-            this.lblEM02.Size = new System.Drawing.Size(12, 15);
-            this.lblEM02.TabIndex = 36;
-            this.lblEM02.Text = "-";
+            this.lblEM08.AutoSize = true;
+            this.lblEM08.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.lblEM08.Location = new System.Drawing.Point(1056, 533);
+            this.lblEM08.Name = "lblEM08";
+            this.lblEM08.Size = new System.Drawing.Size(12, 15);
+            this.lblEM08.TabIndex = 36;
+            this.lblEM08.Text = "-";
             // 
             // lblLength
             // 
@@ -1712,7 +1712,7 @@
             this.BackColor = System.Drawing.SystemColors.ControlText;
             this.ClientSize = new System.Drawing.Size(1150, 605);
             this.Controls.Add(this.lblLength);
-            this.Controls.Add(this.lblEM02);
+            this.Controls.Add(this.lblEM08);
             this.Controls.Add(this.panelEM02Messages);
             this.Controls.Add(this.lblTime);
             this.Controls.Add(this.lblSN);
@@ -1725,7 +1725,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "fmMain";
-            this.Text = "金戰神EM08半測系統V1.0";
+            this.Text = "金戰神EM08半測系統V1.1";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FmMain_FormClosed);
             this.Load += new System.EventHandler(this.FmMain_Load);
             this.groupBox1.ResumeLayout(false);
@@ -1920,7 +1920,7 @@
         private Button btnRead;
         private Label label26;
         private Label lblSN;
-        private ComboBox cbEM02;
+        private ComboBox cbEM08;
         private Label label29;
         private ComboBox cbUT5526;
         private Label label28;
@@ -1940,7 +1940,7 @@
         private Label lblFrontCAM;
         private Label lblRearCAM;
         private Label lblSoftware;
-        private Label lblEM02;
+        private Label lblEM08;
         private Label lblLength;
         private ComboBox cbMES;
         private Label label33;

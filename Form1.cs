@@ -67,7 +67,7 @@ namespace EM02_E_HalfTester
         private int ringInputEM08 = 0;
   
         private int iStateEM08 = 0;
-        private int iCntEM02 = 0;
+        private int iCntEM08 = 0;
         private int iCntCount = 0;
 
         private const UInt16 lenBufBarCode = 256;
@@ -107,7 +107,7 @@ namespace EM02_E_HalfTester
         string SoftwareVersion = "";
         string FirmwareVersion = "";
         string comUT5526 = "";
-        string comEM02 = "";
+        string comEM08 = "";
         string comBarCode = "";
         string comMES = "";
         DateTime time00;
@@ -709,8 +709,8 @@ namespace EM02_E_HalfTester
                                                                             {
                                                                                 if (GetRingEM08() == ',')
                                                                                 {
-                                                                                    iCntEM02++;
-                                                                                    lblTime.Text = iCntEM02.ToString();
+                                                                                    iCntEM08++;
+                                                                                    lblTime.Text = iCntEM08.ToString();
                                                                                     iStateEM08++;
                                                                                     break;
                                                                                 }
@@ -746,7 +746,7 @@ namespace EM02_E_HalfTester
                             {
                                 case "FACTORY":
                                     startReadUT5526();
-                                    lblEM02.Text = strTokens[0];
+                                    lblEM08.Text = strTokens[0];
                                     if (strTokens[1] == "SD")
                                     {
                                         break;
@@ -798,22 +798,22 @@ namespace EM02_E_HalfTester
                                     
                                     break;
                                 case "BOOT":
-                                    lblEM02.Text = strTokens[0];
+                                    lblEM08.Text = strTokens[0];
                                 //    startReadUT5526();
                                    
                                     break;
                                 case "DEV":
-                                    lblEM02.Text = strTokens[0];
+                                    lblEM08.Text = strTokens[0];
                                     break;
                                 case "CAN":
-                                    lblEM02.Text = strTokens[0];
+                                    lblEM08.Text = strTokens[0];
                                     break;
                                 case "INIT":
                                  //   startReadUT5526();
-                                    lblEM02.Text = strTokens[0];
+                                    lblEM08.Text = strTokens[0];
                                     break;
                                 case "SD":
-                                    lblEM02.Text = strTokens[0];
+                                    lblEM08.Text = strTokens[0];
                                     break;
                                 default:
                                     iStateEM08 = 0;
@@ -1296,7 +1296,7 @@ namespace EM02_E_HalfTester
             ringBufferBarCode = new byte[lenBufBarCode];
             ringBufferMES= new byte[lenBufMES];
 
-           strLogFilename = @"./mesdata/"+String.Format("EM02F-Log-{0}.csv",DateTime.Now.ToString("yyyy-MM-dd-hh-mm-ss"));
+           strLogFilename = @"./mesdata/"+String.Format("EM08-Log-{0}.csv",DateTime.Now.ToString("yyyy-MM-dd-hh-mm-ss"));
             
             foreach (Control ctrl in this.Controls)
             {
@@ -1464,14 +1464,14 @@ namespace EM02_E_HalfTester
                 comUT5526 = config.AppSettings.Settings["UT5526"].Value;
             }
 
-            results = Array.Find(allkeys, s => s.Equals("EM02"));
+            results = Array.Find(allkeys, s => s.Equals("EM08"));
             if (results == null)
             {
-                config.AppSettings.Settings.Add("EM02", "COM7");
+                config.AppSettings.Settings.Add("EM08", "COM7");
             }
             else
             {
-                comEM02 = config.AppSettings.Settings["EM02"].Value;
+                comEM08 = config.AppSettings.Settings["EM08"].Value;
 
             }
             results = Array.Find(allkeys, s => s.Equals("BarCode"));
@@ -1506,11 +1506,11 @@ namespace EM02_E_HalfTester
             string[] ports = SerialPort.GetPortNames();
             cbBarCode.Items.AddRange(ports);
             cbUT5526.Items.AddRange(ports);
-            cbEM02.Items.AddRange(ports);
+            cbEM08.Items.AddRange(ports);
             cbMES.Items.AddRange(ports);
 
             cbBarCode.SelectedItem =  comBarCode;
-            cbEM02.SelectedItem = comEM02;
+            cbEM08.SelectedItem = comEM08;
             cbUT5526.SelectedItem = comUT5526;
             cbMES.SelectedItem = comMES;
 
@@ -1520,7 +1520,7 @@ namespace EM02_E_HalfTester
             InitializeTimer();
             initComUT5526(comUT5526);
             initComBarCode(comBarCode);
-            initComEM08(comEM02);
+            initComEM08(comEM08);
             InitComMES(comMES);
 
             if (bErrorUT5526 == false)
@@ -1740,7 +1740,7 @@ namespace EM02_E_HalfTester
                 _UT5526Port?.Close();
             }
       
-            initComEM08(comEM02);
+            initComEM08(comEM08);
             initComUT5526(comUT5526);
             initComBarCode(comBarCode);
           
@@ -1817,10 +1817,10 @@ namespace EM02_E_HalfTester
                 config.AppSettings.Settings.Add("UT5526", cbUT5526.SelectedItem.ToString());
                 config.Save(ConfigurationSaveMode.Modified);
             }
-            if (cbEM02.SelectedItem.ToString() != "")
+            if (cbEM08.SelectedItem.ToString() != "")
             {
-                config.AppSettings.Settings.Remove("EM02");
-                config.AppSettings.Settings.Add("EM02", cbEM02.SelectedItem.ToString());
+                config.AppSettings.Settings.Remove("EM08");
+                config.AppSettings.Settings.Add("EM08", cbEM08.SelectedItem.ToString());
                 config.Save(ConfigurationSaveMode.Modified);
             }
             if (cbMES.SelectedItem.ToString() != "")
@@ -1835,12 +1835,12 @@ namespace EM02_E_HalfTester
         private void btnGetSetting_Click(object sender, EventArgs e)
         {
             Configuration config = ConfigurationManager.OpenExeConfiguration(Application.ExecutablePath);
-            comEM02 = config.AppSettings.Settings["EM02"].Value;
+            comEM08 = config.AppSettings.Settings["EM08"].Value;
             comUT5526 = config.AppSettings.Settings["UT5526"].Value;
             comBarCode = config.AppSettings.Settings["BarCode"].Value;
             cbBarCode.SelectedItem = comBarCode;
             cbUT5526.SelectedItem = comUT5526;
-            cbEM02.SelectedItem = comEM02;
+            cbEM08.SelectedItem = comEM08;
             MessageBox.Show("Com Port 重新設定OK!");
             resetComPorts();
         }
@@ -1957,6 +1957,8 @@ namespace EM02_E_HalfTester
                 bSerialNO = false;
                 pb.Visible = false;
                 iErrors = 0;
+
+
                 bWaitACC = false;
                 lblSN.Text = "-";
              
