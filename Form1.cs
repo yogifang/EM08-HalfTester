@@ -563,7 +563,7 @@ namespace EM02_E_HalfTester
                 for (int i = 0; i < ringCountBarCode; i++)
                 {
                     int iOp = (ringOutputBarCode + i) & (lenBufBarCode - 1);
-                    if (ringBufferBarCode[iOp] == 0x0a)
+                    if (ringBufferBarCode[iOp] == 0x0a || ringBufferBarCode[iOp] == 0x0d)
                     {
                         return i + 1;
                     }

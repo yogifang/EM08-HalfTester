@@ -1725,7 +1725,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "fmMain";
-            this.Text = "金戰神EM08半測系統V1.1";
+            this.Text = "金戰神EM08半測系統V1.2";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FmMain_FormClosed);
             this.Load += new System.EventHandler(this.FmMain_Load);
             this.groupBox1.ResumeLayout(false);
