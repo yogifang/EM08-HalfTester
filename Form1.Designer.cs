@@ -755,7 +755,7 @@
             // pbPushButton
             // 
             pbPushButton.Location = new Point(1230, 13);
-            pbPushButton.Margin = new Padding(4, 4, 4, 4);
+            pbPushButton.Margin = new Padding(4);
             pbPushButton.Name = "pbPushButton";
             pbPushButton.Size = new Size(189, 160);
             pbPushButton.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -1316,7 +1316,7 @@
             // 
             btnGetSetting.ForeColor = SystemColors.ActiveCaptionText;
             btnGetSetting.Location = new Point(957, 9);
-            btnGetSetting.Margin = new Padding(4, 4, 4, 4);
+            btnGetSetting.Margin = new Padding(4);
             btnGetSetting.Name = "btnGetSetting";
             btnGetSetting.Size = new Size(95, 29);
             btnGetSetting.TabIndex = 7;
@@ -1328,7 +1328,7 @@
             // 
             btnSaveSetting.ForeColor = SystemColors.ActiveCaptionText;
             btnSaveSetting.Location = new Point(845, 9);
-            btnSaveSetting.Margin = new Padding(4, 4, 4, 4);
+            btnSaveSetting.Margin = new Padding(4);
             btnSaveSetting.Name = "btnSaveSetting";
             btnSaveSetting.Size = new Size(100, 29);
             btnSaveSetting.TabIndex = 6;
@@ -1439,7 +1439,7 @@
             panelDisplay.Controls.Add(groupBox20);
             panelDisplay.Controls.Add(groupBox21);
             panelDisplay.Location = new Point(19, 54);
-            panelDisplay.Margin = new Padding(4, 4, 4, 4);
+            panelDisplay.Margin = new Padding(4);
             panelDisplay.Name = "panelDisplay";
             panelDisplay.Size = new Size(1446, 419);
             panelDisplay.TabIndex = 33;
@@ -1458,7 +1458,7 @@
             panelEM02Messages.Controls.Add(label13);
             panelEM02Messages.Controls.Add(pbPushButton);
             panelEM02Messages.Location = new Point(19, 481);
-            panelEM02Messages.Margin = new Padding(4, 4, 4, 4);
+            panelEM02Messages.Margin = new Padding(4);
             panelEM02Messages.Name = "panelEM02Messages";
             panelEM02Messages.Size = new Size(1450, 190);
             panelEM02Messages.TabIndex = 35;
@@ -1630,7 +1630,7 @@
             Controls.Add(panelDisplay);
             FormBorderStyle = FormBorderStyle.Fixed3D;
             Name = "fmMain";
-            Text = "金戰神EM08半測系統V1.3";
+            Text = "金戰神EM08半測系統V1.4";
             FormClosed += FmMain_FormClosed;
             Load += FmMain_Load;
             groupBox1.ResumeLayout(false);

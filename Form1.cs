@@ -755,27 +755,6 @@ namespace EM02_E_HalfTester
                                     lblSoftware.Text = strTokens[1];
                                     lblSoftware.ForeColor = (SoftwareVersion != "" && SoftwareVersion != lblSoftware.Text) ? colorError : colorOK;
 
-                                    //    lblFirmware.Text = strTokens[2];
-                                    //   lblFirmware.ForeColor = (FirmwareVersion != "" && FirmwareVersion != lblFirmware.Text) ? colorError : colorOK;
-                                    //    EM08DBGTYPE em02Msg = car_type.Find(x => x.code == strTokens[3]);
-                                    //    lblCarModel.Text = em02Msg?.name;
-                                    //    lblCarModel.ForeColor = (Color)(em02Msg?.textColor);
-
-                                    //    em02Msg = gpsStatus.Find(x => x.code == strTokens[4]);
-                                    //    lblGPS.Text = em02Msg?.name;
-                                    //    lblGPS.ForeColor = (Color)(em02Msg?.textColor);
-
-
-                                    //    lblSpeed.Text = strTokens[5];
-                                    //   lblSpeed.ForeColor = (lblSpeed.Text == "000" && lblSpeed.Text != "-") ? colorGoing : colorOK;
-                                    //   if(lblSpeed.Text == "-")
-                                    //     {
-                                    //          lblSpeed.ForeColor = colorError;
-                                    //     }
-
-                                    //     em02Msg = gSensorStatus.Find(x => x.code == strTokens[6]);
-                                    //     lblGSensor.Text = em02Msg?.name;
-                                    //    lblGSensor.ForeColor = (Color)(em02Msg?.textColor);
 
                                     lblACC.Text = strTokens[7];
 
@@ -858,7 +837,7 @@ namespace EM02_E_HalfTester
                             string strSN = System.Text.Encoding.Default.GetString(bySN);
 
                             lblSN.Text = strSN;
-                            if (strSN.Contains("EM08"))
+                            if (strSN.Contains("EM08") || strSN.Contains("EM02"))
                             {
                                 bSerialNO = true;
                                 clearComBuffer();
