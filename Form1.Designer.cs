@@ -1643,7 +1643,7 @@
             Controls.Add(panelDisplay);
             FormBorderStyle = FormBorderStyle.Fixed3D;
             Name = "fmMain";
-            Text = "金戰神EM08半測系統V1.5";
+            Text = "金戰神EM08半測系統V1.6";
             FormClosed += FmMain_FormClosed;
             Load += FmMain_Load;
             groupBox1.ResumeLayout(false);

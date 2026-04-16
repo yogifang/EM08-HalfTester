@@ -5,6 +5,7 @@ using System.Configuration;
 using System.Data;
 using System.Diagnostics;
 using System.Diagnostics.CodeAnalysis;
+using System.Drawing;
 using System.Dynamic;
 using System.IO.Ports;
 using System.Linq;
@@ -747,10 +748,7 @@ namespace EM02_E_HalfTester
                             {
                                 case "FACTORY":
                                     startReadUT5526();
-                                    if (cbNoVersion.Checked)
-                                    {
-                                        break;
-                                    }
+                                   
                                     lblEM08.Text = strTokens[0];
                                     if (strTokens[1] == "SD")
                                     {
@@ -758,8 +756,7 @@ namespace EM02_E_HalfTester
                                     }
                                     lblSoftware.Text = strTokens[1];
                                     lblSoftware.ForeColor = (SoftwareVersion != "" && SoftwareVersion != lblSoftware.Text) ? colorError : colorOK;
-
-
+                                    
                                     lblACC.Text = strTokens[7];
 
                                     EM08DBGTYPE em02Msg = sdCardStatus.Find(x => x.code == strTokens[9]);
@@ -780,6 +777,21 @@ namespace EM02_E_HalfTester
                                     em08VoltageDatas["SoftwareVersion"] = lblSoftware.Text;
                                     //      em08VoltageDatas["FirmwareVersion"] = lblFirmware.Text;
 
+                                    if (cbNoVersion.Checked == true)
+                                    {
+                                        lblSoftware.ForeColor = colorOK;
+                                        lblSoftware.Text = "Version NA";
+                                        lblSDCard.ForeColor = colorOK;
+                                        lblSDCard.Text = "SD Card NA";
+                                        lblFrontCAM.Text = "Front CAM NA";
+                                        lblFrontCAM.ForeColor = colorOK;
+                                        lblRearCAM.Text = "Rear CAM NA";
+                                        lblRearCAM.ForeColor = colorOK;
+                                        lblACC.ForeColor = colorOK;
+                                        lblACC.Text = "ACC NA";
+                                    }
+
+
                                     break;
                                 case "BOOT":
                                     lblEM08.Text = strTokens[0];
@@ -792,6 +804,20 @@ namespace EM02_E_HalfTester
                                 case "CAN":
                                     lblEM08.Text = strTokens[0];
                                     startReadUT5526();
+                                    if (cbNoVersion.Checked == true)
+                                    {
+                                        lblSoftware.ForeColor = colorOK;
+                                        lblSoftware.Text = "Version NA";
+                                        lblSDCard.ForeColor = colorOK;
+                                        lblSDCard.Text = "SD Card NA";
+                                        lblFrontCAM.Text = "Front CAM NA";
+                                        lblFrontCAM.ForeColor = colorOK;
+                                        lblRearCAM.Text = "Rear CAM NA";
+                                        lblRearCAM.ForeColor = colorOK;
+                                        lblACC.ForeColor = colorOK;
+                                        lblACC.Text = "ACC NA";
+                                    }
+
                                     break;
                                 case "INIT":
                                     //   startReadUT5526();
