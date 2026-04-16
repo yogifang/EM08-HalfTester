@@ -747,6 +747,10 @@ namespace EM02_E_HalfTester
                             {
                                 case "FACTORY":
                                     startReadUT5526();
+                                    if (cbNoVersion.Checked)
+                                    {
+                                        break;
+                                    }
                                     lblEM08.Text = strTokens[0];
                                     if (strTokens[1] == "SD")
                                     {
@@ -787,6 +791,7 @@ namespace EM02_E_HalfTester
                                     break;
                                 case "CAN":
                                     lblEM08.Text = strTokens[0];
+                                    startReadUT5526();
                                     break;
                                 case "INIT":
                                     //   startReadUT5526();
@@ -824,7 +829,7 @@ namespace EM02_E_HalfTester
             switch (iStateBarCode)
             {
                 case 0:
-                    if (ringCountBarCode >= 18)    // EM02 SN ==> 20 byte with 0a 0d
+                    if (ringCountBarCode >= 19)    // EM08 SN ==> 19 byte with 0a 0d
                     {
                         int iTemp = SearchBarCodeLineFeed();
                         if (iTemp >= 18)    // it is SN��

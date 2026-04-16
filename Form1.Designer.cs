@@ -147,6 +147,7 @@
             label13 = new Label();
             lblEM08 = new Label();
             lblLength = new Label();
+            cbNoVersion = new CheckBox();
             groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
@@ -228,7 +229,7 @@
             groupBox1.Controls.Add(pictureBox3);
             groupBox1.Controls.Add(pictureBox2);
             groupBox1.Controls.Add(pictureBox1);
-            groupBox1.Font = new Font("Microsoft JhengHei UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            groupBox1.Font = new Font("Microsoft JhengHei UI", 12F, FontStyle.Bold);
             groupBox1.ForeColor = SystemColors.Control;
             groupBox1.Location = new Point(724, 16);
             groupBox1.Name = "groupBox1";
@@ -287,7 +288,7 @@
             groupBox3.Controls.Add(pictureBox7);
             groupBox3.Controls.Add(pictureBox8);
             groupBox3.Controls.Add(pictureBox9);
-            groupBox3.Font = new Font("Microsoft JhengHei UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            groupBox3.Font = new Font("Microsoft JhengHei UI", 12F, FontStyle.Bold);
             groupBox3.ForeColor = SystemColors.Control;
             groupBox3.Location = new Point(251, 16);
             groupBox3.Name = "groupBox3";
@@ -346,7 +347,7 @@
             groupBox4.Controls.Add(pictureBox10);
             groupBox4.Controls.Add(pictureBox11);
             groupBox4.Controls.Add(pictureBox12);
-            groupBox4.Font = new Font("Microsoft JhengHei UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            groupBox4.Font = new Font("Microsoft JhengHei UI", 12F, FontStyle.Bold);
             groupBox4.ForeColor = SystemColors.Control;
             groupBox4.Location = new Point(14, 16);
             groupBox4.Name = "groupBox4";
@@ -405,7 +406,7 @@
             groupBox5.Controls.Add(pictureBox13);
             groupBox5.Controls.Add(pictureBox14);
             groupBox5.Controls.Add(pictureBox15);
-            groupBox5.Font = new Font("Microsoft JhengHei UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            groupBox5.Font = new Font("Microsoft JhengHei UI", 12F, FontStyle.Bold);
             groupBox5.ForeColor = SystemColors.Control;
             groupBox5.Location = new Point(1196, 275);
             groupBox5.Name = "groupBox5";
@@ -464,7 +465,7 @@
             groupBox6.Controls.Add(pictureBox16);
             groupBox6.Controls.Add(pictureBox17);
             groupBox6.Controls.Add(pictureBox18);
-            groupBox6.Font = new Font("Microsoft JhengHei UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            groupBox6.Font = new Font("Microsoft JhengHei UI", 12F, FontStyle.Bold);
             groupBox6.ForeColor = SystemColors.Control;
             groupBox6.Location = new Point(487, 16);
             groupBox6.Name = "groupBox6";
@@ -523,7 +524,7 @@
             groupBox7.Controls.Add(pictureBox19);
             groupBox7.Controls.Add(pictureBox20);
             groupBox7.Controls.Add(pictureBox21);
-            groupBox7.Font = new Font("Microsoft JhengHei UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            groupBox7.Font = new Font("Microsoft JhengHei UI", 12F, FontStyle.Bold);
             groupBox7.ForeColor = SystemColors.Control;
             groupBox7.Location = new Point(15, 146);
             groupBox7.Name = "groupBox7";
@@ -582,7 +583,7 @@
             groupBox8.Controls.Add(pictureBox22);
             groupBox8.Controls.Add(pictureBox23);
             groupBox8.Controls.Add(pictureBox24);
-            groupBox8.Font = new Font("Microsoft JhengHei UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            groupBox8.Font = new Font("Microsoft JhengHei UI", 12F, FontStyle.Bold);
             groupBox8.ForeColor = SystemColors.Control;
             groupBox8.Location = new Point(251, 146);
             groupBox8.Name = "groupBox8";
@@ -641,7 +642,7 @@
             groupBox9.Controls.Add(pictureBox25);
             groupBox9.Controls.Add(pictureBox26);
             groupBox9.Controls.Add(pictureBox27);
-            groupBox9.Font = new Font("Microsoft JhengHei UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            groupBox9.Font = new Font("Microsoft JhengHei UI", 12F, FontStyle.Bold);
             groupBox9.ForeColor = SystemColors.Control;
             groupBox9.Location = new Point(487, 146);
             groupBox9.Name = "groupBox9";
@@ -700,7 +701,7 @@
             groupBox10.Controls.Add(pictureBox28);
             groupBox10.Controls.Add(pictureBox29);
             groupBox10.Controls.Add(pictureBox30);
-            groupBox10.Font = new Font("Microsoft JhengHei UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            groupBox10.Font = new Font("Microsoft JhengHei UI", 12F, FontStyle.Bold);
             groupBox10.ForeColor = SystemColors.Control;
             groupBox10.Location = new Point(724, 146);
             groupBox10.Name = "groupBox10";
@@ -771,7 +772,7 @@
             groupBox11.Controls.Add(pictureBox31);
             groupBox11.Controls.Add(pictureBox32);
             groupBox11.Controls.Add(pictureBox33);
-            groupBox11.Font = new Font("Microsoft JhengHei UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            groupBox11.Font = new Font("Microsoft JhengHei UI", 12F, FontStyle.Bold);
             groupBox11.ForeColor = SystemColors.Control;
             groupBox11.Location = new Point(959, 275);
             groupBox11.Name = "groupBox11";
@@ -830,7 +831,7 @@
             groupBox12.Controls.Add(pictureBox34);
             groupBox12.Controls.Add(pictureBox35);
             groupBox12.Controls.Add(pictureBox36);
-            groupBox12.Font = new Font("Microsoft JhengHei UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            groupBox12.Font = new Font("Microsoft JhengHei UI", 12F, FontStyle.Bold);
             groupBox12.ForeColor = SystemColors.Control;
             groupBox12.Location = new Point(724, 275);
             groupBox12.Name = "groupBox12";
@@ -889,7 +890,7 @@
             groupBox19.Controls.Add(pictureBox55);
             groupBox19.Controls.Add(pictureBox56);
             groupBox19.Controls.Add(pictureBox57);
-            groupBox19.Font = new Font("Microsoft JhengHei UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            groupBox19.Font = new Font("Microsoft JhengHei UI", 12F, FontStyle.Bold);
             groupBox19.ForeColor = SystemColors.Control;
             groupBox19.Location = new Point(1197, 16);
             groupBox19.Name = "groupBox19";
@@ -948,7 +949,7 @@
             groupBox20.Controls.Add(pictureBox58);
             groupBox20.Controls.Add(pictureBox59);
             groupBox20.Controls.Add(pictureBox60);
-            groupBox20.Font = new Font("Microsoft JhengHei UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            groupBox20.Font = new Font("Microsoft JhengHei UI", 12F, FontStyle.Bold);
             groupBox20.ForeColor = SystemColors.Control;
             groupBox20.Location = new Point(959, 146);
             groupBox20.Name = "groupBox20";
@@ -1007,7 +1008,7 @@
             groupBox21.Controls.Add(pictureBox61);
             groupBox21.Controls.Add(pictureBox62);
             groupBox21.Controls.Add(pictureBox63);
-            groupBox21.Font = new Font("Microsoft JhengHei UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            groupBox21.Font = new Font("Microsoft JhengHei UI", 12F, FontStyle.Bold);
             groupBox21.ForeColor = SystemColors.Control;
             groupBox21.Location = new Point(1196, 146);
             groupBox21.Name = "groupBox21";
@@ -1066,7 +1067,7 @@
             groupBox22.Controls.Add(pictureBox64);
             groupBox22.Controls.Add(pictureBox65);
             groupBox22.Controls.Add(pictureBox66);
-            groupBox22.Font = new Font("Microsoft JhengHei UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            groupBox22.Font = new Font("Microsoft JhengHei UI", 12F, FontStyle.Bold);
             groupBox22.ForeColor = SystemColors.Control;
             groupBox22.Location = new Point(251, 275);
             groupBox22.Name = "groupBox22";
@@ -1125,7 +1126,7 @@
             groupBox23.Controls.Add(pictureBox67);
             groupBox23.Controls.Add(pictureBox68);
             groupBox23.Controls.Add(pictureBox69);
-            groupBox23.Font = new Font("Microsoft JhengHei UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            groupBox23.Font = new Font("Microsoft JhengHei UI", 12F, FontStyle.Bold);
             groupBox23.ForeColor = SystemColors.Control;
             groupBox23.Location = new Point(487, 275);
             groupBox23.Name = "groupBox23";
@@ -1184,7 +1185,7 @@
             groupBox24.Controls.Add(pictureBox70);
             groupBox24.Controls.Add(pictureBox71);
             groupBox24.Controls.Add(pictureBox72);
-            groupBox24.Font = new Font("Microsoft JhengHei UI", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            groupBox24.Font = new Font("Microsoft JhengHei UI", 12F, FontStyle.Bold);
             groupBox24.ForeColor = SystemColors.Control;
             groupBox24.Location = new Point(15, 274);
             groupBox24.Name = "groupBox24";
@@ -1387,7 +1388,7 @@
             // label26
             // 
             label26.AutoSize = true;
-            label26.Font = new Font("Microsoft JhengHei UI", 14F, FontStyle.Regular, GraphicsUnit.Point);
+            label26.Font = new Font("Microsoft JhengHei UI", 14F);
             label26.ForeColor = SystemColors.ButtonHighlight;
             label26.Location = new Point(19, 18);
             label26.Margin = new Padding(4, 0, 4, 0);
@@ -1399,7 +1400,7 @@
             // lblSN
             // 
             lblSN.AutoSize = true;
-            lblSN.Font = new Font("Microsoft JhengHei UI", 14F, FontStyle.Regular, GraphicsUnit.Point);
+            lblSN.Font = new Font("Microsoft JhengHei UI", 14F);
             lblSN.ForeColor = SystemColors.ButtonHighlight;
             lblSN.Location = new Point(77, 18);
             lblSN.Margin = new Padding(4, 0, 4, 0);
@@ -1466,7 +1467,7 @@
             // lblACC
             // 
             lblACC.AutoSize = true;
-            lblACC.Font = new Font("Microsoft JhengHei UI", 14F, FontStyle.Regular, GraphicsUnit.Point);
+            lblACC.Font = new Font("Microsoft JhengHei UI", 14F);
             lblACC.ForeColor = SystemColors.ButtonHighlight;
             lblACC.Location = new Point(631, 51);
             lblACC.Margin = new Padding(4, 0, 4, 0);
@@ -1479,7 +1480,7 @@
             // lblSDCard
             // 
             lblSDCard.AutoSize = true;
-            lblSDCard.Font = new Font("Microsoft JhengHei UI", 14F, FontStyle.Regular, GraphicsUnit.Point);
+            lblSDCard.Font = new Font("Microsoft JhengHei UI", 14F);
             lblSDCard.ForeColor = SystemColors.ButtonHighlight;
             lblSDCard.Location = new Point(631, 81);
             lblSDCard.Margin = new Padding(4, 0, 4, 0);
@@ -1492,7 +1493,7 @@
             // lblFrontCAM
             // 
             lblFrontCAM.AutoSize = true;
-            lblFrontCAM.Font = new Font("Microsoft JhengHei UI", 14F, FontStyle.Regular, GraphicsUnit.Point);
+            lblFrontCAM.Font = new Font("Microsoft JhengHei UI", 14F);
             lblFrontCAM.ForeColor = SystemColors.ButtonHighlight;
             lblFrontCAM.Location = new Point(631, 111);
             lblFrontCAM.Margin = new Padding(4, 0, 4, 0);
@@ -1505,7 +1506,7 @@
             // lblRearCAM
             // 
             lblRearCAM.AutoSize = true;
-            lblRearCAM.Font = new Font("Microsoft JhengHei UI", 14F, FontStyle.Regular, GraphicsUnit.Point);
+            lblRearCAM.Font = new Font("Microsoft JhengHei UI", 14F);
             lblRearCAM.ForeColor = SystemColors.ButtonHighlight;
             lblRearCAM.Location = new Point(631, 142);
             lblRearCAM.Margin = new Padding(4, 0, 4, 0);
@@ -1518,7 +1519,7 @@
             // lblSoftware
             // 
             lblSoftware.AutoSize = true;
-            lblSoftware.Font = new Font("Microsoft JhengHei UI", 14F, FontStyle.Regular, GraphicsUnit.Point);
+            lblSoftware.Font = new Font("Microsoft JhengHei UI", 14F);
             lblSoftware.ForeColor = SystemColors.ButtonHighlight;
             lblSoftware.Location = new Point(73, 20);
             lblSoftware.Margin = new Padding(4, 0, 4, 0);
@@ -1531,7 +1532,7 @@
             // label18
             // 
             label18.AutoSize = true;
-            label18.Font = new Font("Microsoft JhengHei UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            label18.Font = new Font("Microsoft JhengHei UI", 14.25F);
             label18.ForeColor = SystemColors.ButtonFace;
             label18.Location = new Point(568, 51);
             label18.Margin = new Padding(4, 0, 4, 0);
@@ -1543,7 +1544,7 @@
             // label17
             // 
             label17.AutoSize = true;
-            label17.Font = new Font("Microsoft JhengHei UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            label17.Font = new Font("Microsoft JhengHei UI", 14.25F);
             label17.ForeColor = SystemColors.ButtonFace;
             label17.Location = new Point(555, 81);
             label17.Margin = new Padding(4, 0, 4, 0);
@@ -1555,7 +1556,7 @@
             // label16
             // 
             label16.AutoSize = true;
-            label16.Font = new Font("Microsoft JhengHei UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            label16.Font = new Font("Microsoft JhengHei UI", 14.25F);
             label16.ForeColor = SystemColors.ButtonFace;
             label16.Location = new Point(545, 111);
             label16.Margin = new Padding(4, 0, 4, 0);
@@ -1567,7 +1568,7 @@
             // label15
             // 
             label15.AutoSize = true;
-            label15.Font = new Font("Microsoft JhengHei UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            label15.Font = new Font("Microsoft JhengHei UI", 14.25F);
             label15.ForeColor = SystemColors.ButtonFace;
             label15.Location = new Point(545, 142);
             label15.Margin = new Padding(4, 0, 4, 0);
@@ -1579,7 +1580,7 @@
             // label13
             // 
             label13.AutoSize = true;
-            label13.Font = new Font("Microsoft JhengHei UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            label13.Font = new Font("Microsoft JhengHei UI", 14.25F);
             label13.ForeColor = SystemColors.ButtonFace;
             label13.Location = new Point(4, 20);
             label13.Margin = new Padding(4, 0, 4, 0);
@@ -1611,12 +1612,24 @@
             lblLength.TabIndex = 37;
             lblLength.Text = "label33";
             // 
+            // cbNoVersion
+            // 
+            cbNoVersion.AutoSize = true;
+            cbNoVersion.ForeColor = SystemColors.ButtonFace;
+            cbNoVersion.Location = new Point(797, 18);
+            cbNoVersion.Name = "cbNoVersion";
+            cbNoVersion.Size = new Size(109, 23);
+            cbNoVersion.TabIndex = 38;
+            cbNoVersion.Text = "No Version";
+            cbNoVersion.UseVisualStyleBackColor = true;
+            // 
             // fmMain
             // 
             AutoScaleDimensions = new SizeF(9F, 19F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ControlText;
             ClientSize = new Size(1479, 766);
+            Controls.Add(cbNoVersion);
             Controls.Add(lblLength);
             Controls.Add(lblEM08);
             Controls.Add(panelEM02Messages);
@@ -1630,7 +1643,7 @@
             Controls.Add(panelDisplay);
             FormBorderStyle = FormBorderStyle.Fixed3D;
             Name = "fmMain";
-            Text = "金戰神EM08半測系統V1.4";
+            Text = "金戰神EM08半測系統V1.5";
             FormClosed += FmMain_FormClosed;
             Load += FmMain_Load;
             groupBox1.ResumeLayout(false);
@@ -1848,5 +1861,6 @@
         private Label lblLength;
         private ComboBox cbMES;
         private Label label33;
+        private CheckBox cbNoVersion;
     }
 }
