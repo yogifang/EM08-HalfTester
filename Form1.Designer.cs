@@ -135,6 +135,8 @@
             lblTime = new Label();
             panelDisplay = new Panel();
             panelEM02Messages = new Panel();
+            lblFirmware = new Label();
+            label2 = new Label();
             lblACC = new Label();
             lblSDCard = new Label();
             lblFrontCAM = new Label();
@@ -1447,6 +1449,8 @@
             // 
             // panelEM02Messages
             // 
+            panelEM02Messages.Controls.Add(lblFirmware);
+            panelEM02Messages.Controls.Add(label2);
             panelEM02Messages.Controls.Add(lblACC);
             panelEM02Messages.Controls.Add(lblSDCard);
             panelEM02Messages.Controls.Add(lblFrontCAM);
@@ -1463,6 +1467,32 @@
             panelEM02Messages.Name = "panelEM02Messages";
             panelEM02Messages.Size = new Size(1450, 190);
             panelEM02Messages.TabIndex = 35;
+            // 
+            // lblFirmware
+            // 
+            lblFirmware.AutoSize = true;
+            lblFirmware.Font = new Font("Microsoft JhengHei UI", 14F);
+            lblFirmware.ForeColor = SystemColors.ButtonHighlight;
+            lblFirmware.Location = new Point(73, 61);
+            lblFirmware.Margin = new Padding(4, 0, 4, 0);
+            lblFirmware.Name = "lblFirmware";
+            lblFirmware.Size = new Size(23, 30);
+            lblFirmware.TabIndex = 51;
+            lblFirmware.Tag = "0001";
+            lblFirmware.Text = "-";
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Font = new Font("Microsoft JhengHei UI", 14.25F);
+            label2.ForeColor = SystemColors.ButtonFace;
+            label2.Location = new Point(6, 61);
+            label2.Margin = new Padding(4, 0, 4, 0);
+            label2.Name = "label2";
+            label2.Size = new Size(67, 30);
+            label2.TabIndex = 50;
+            label2.Tag = "";
+            label2.Text = "韌體:";
             // 
             // lblACC
             // 
@@ -1643,7 +1673,7 @@
             Controls.Add(panelDisplay);
             FormBorderStyle = FormBorderStyle.Fixed3D;
             Name = "fmMain";
-            Text = "金戰神EM08半測系統V1.6";
+            Text = "金戰神EM08半測系統V1.8";
             FormClosed += FmMain_FormClosed;
             Load += FmMain_Load;
             groupBox1.ResumeLayout(false);
@@ -1862,5 +1892,7 @@
         private ComboBox cbMES;
         private Label label33;
         private CheckBox cbNoVersion;
+        private Label lblFirmware;
+        private Label label2;
     }
 }

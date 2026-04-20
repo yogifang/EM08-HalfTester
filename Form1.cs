@@ -756,7 +756,7 @@ namespace EM02_E_HalfTester
                                     }
                                     lblSoftware.Text = strTokens[1];
                                     lblSoftware.ForeColor = (SoftwareVersion != "" && SoftwareVersion != lblSoftware.Text) ? colorError : colorOK;
-                                    
+                                    lblFirmware.Text = strTokens[2]+"."+strTokens[3];
                                     lblACC.Text = strTokens[7];
 
                                     EM08DBGTYPE em02Msg = sdCardStatus.Find(x => x.code == strTokens[9]);
@@ -775,7 +775,7 @@ namespace EM02_E_HalfTester
                                     em08VoltageDatas["SN"] = lblSN.Text.Replace("\r", String.Empty).Replace("\n", String.Empty);
 
                                     em08VoltageDatas["SoftwareVersion"] = lblSoftware.Text;
-                                    //      em08VoltageDatas["FirmwareVersion"] = lblFirmware.Text;
+                                    em08VoltageDatas["FirmwareVersion"] = lblFirmware.Text;
 
                                     if (cbNoVersion.Checked == true)
                                     {
@@ -803,7 +803,7 @@ namespace EM02_E_HalfTester
                                     break;
                                 case "CAN":
                                     lblEM08.Text = strTokens[0];
-                                    startReadUT5526();
+                                  //  startReadUT5526();
                                     if (cbNoVersion.Checked == true)
                                     {
                                         lblSoftware.ForeColor = colorOK;
